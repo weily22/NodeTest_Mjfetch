@@ -1,0 +1,31 @@
+{
+  "name": "nodetest_mjfetch",
+  "version": "1.0.0",
+  "description": "node mock interface test mj-fetch library",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon -w ./ --exec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weily22/NodeTest_Mjfetch.git"
+  },
+  "keywords": [
+    "node",
+    "koa"
+  ],
+  "author": "weily",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weily22/NodeTest_Mjfetch/issues"
+  },
+  "homepage": "https://github.com/weily22/NodeTest_Mjfetch#readme",
+  "dependencies": {
+    "koa": "^2.13.4",
+    "koa-body": "^4.2.0",
+    "koa-router": "^10.1.1",
+    "koa2-cors": "^2.0.6",
+    "nodemon": "^2.0.15"
+  }
+}

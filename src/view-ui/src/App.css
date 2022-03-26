@@ -1,0 +1,30 @@
+.App .user-list {
+    padding: 5px;
+    color: #333;
+    margin-top: 10%;
+}
+.user-list table,
+.user-list .box {
+    margin: auto;
+}
+.user-list table tr td{
+    padding: 10px;
+}
+
+.user-list .td-btn {
+    cursor: pointer;
+    display: inline-block;
+    padding: 4px 15px;
+    border-radius: 2px;
+    color: #fff;
+    border-color: #1890ff;
+    background: #1890ff;
+    /*text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);*/
+    box-shadow: 0 2px #0000000b;
+    margin-right: 10px;
+}
+
+.user-list .box {
+    width: 512px;
+    color: #333;
+}
