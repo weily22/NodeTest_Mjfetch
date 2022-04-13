@@ -1,0 +1,28 @@
+.home {
+  padding: 20px;
+  .home_pre {
+    span {
+      color: green;
+      font-style: italic;
+    }
+  }
+  .home-header {
+    padding: 20px 0;
+    border-bottom: 1px #1890ff dashed;
+    margin-bottom: 10px;
+    span {
+      cursor: pointer;
+      display: inline-block;
+      padding: 4px 15px;
+      border-radius: 2px;
+      color: #fff;
+      border-color: #1890ff;
+      background: #1890ff;
+      box-shadow: 0 2px #0000000b;
+      margin-right: 10px;
+    }
+  }
+  button {
+
+  }
+}

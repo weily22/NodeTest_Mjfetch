@@ -7,6 +7,7 @@ router
   .get('/user', controllers.getUserList)
   .get('/user/:id', controllers.getUserById)
   .post('/user', controllers.addUser)
+  .post('/upload', controllers.upload)
   .delete('/user/:id', controllers.deleteUsersById)
 
 

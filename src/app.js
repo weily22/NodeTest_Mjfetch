@@ -2,6 +2,8 @@ const Koa = require('koa');
 const app = new Koa();
 const cors = require('koa2-cors');
 const koaBody = require('koa-body');
+const koaStatic = require('koa-static')
+const path = require('path');
 
 const PORT = 3030;
 const router = require('./router');
@@ -17,7 +19,18 @@ app.use(cors({
   allowHeaders: ['Content-Type', 'Authorization', 'Accept'], //设置服务器支持的所有头信息字段
   exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'] //设置获取其他自定义字段
 }));
-app.use(koaBody());
+app.use(koaBody({
+  // 支持文件格式
+  multipart: true,
+  formidable: {
+    // 上传目录
+    // uploadDir: path.join(__dirname, 'public/uploads'),
+    uploadDir: path.join(__dirname, 'public/uploads'),
+    // 保留文件扩展名
+    keepExtensions: true,
+  }
+}));
+app.use(koaStatic(path.join(__dirname, 'public')))
 app.use(router.routes(), router.allowedMethods());
 app.use(middlewares.handleResponse)
 

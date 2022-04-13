@@ -1,0 +1,20 @@
+.get-demo {
+  .demo {
+    margin: 10px;
+  }
+
+  .demo_user {
+    padding: 10px 0;
+    color: #666;
+    li {
+      margin: 6px 0;
+      padding: 5px 10px;
+      background-color: #f7f7f7;
+
+      span {
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+  }
+}

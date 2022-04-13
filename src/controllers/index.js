@@ -1,3 +1,4 @@
+const path = require('path');
 const mnData = [
   { id: 1, name: 'xm', age: '25', hobby: 'swimming' },
   { id: 2, name: '江江', age: '35', hobby: 'reading' },
@@ -5,11 +6,6 @@ const mnData = [
 ]
 
 function deal(ctx, next, name) {
-  console.log('name', name)
-  console.log('ctx.params', ctx.params)
-  console.log('ctx.request', ctx.request)
-  console.log('ctx.query', ctx.query)
-  console.log('ctx.body', ctx.body)
   switch (name) {
     case 'getUserById':
       ctx.body = {
@@ -19,10 +15,11 @@ function deal(ctx, next, name) {
       }
       break;
     case 'getUserList':
+      const { name } = ctx.query;
       ctx.body = {
         status: 200,
         message: "success",
-        data: getUserList(ctx.query.id),
+        data: name ? getUserByName(name) : getUserList(ctx.query.id),
       }
       break;
     case 'addUser':
@@ -40,11 +37,35 @@ function deal(ctx, next, name) {
         data: null,
       }
       break;
+    case 'upload':
+      if (!ctx.request.files.file) {
+        ctx.body = {
+          status: 400,
+          message: '请选择上传图片!',
+        }
+        break;
+      }
+      const username = ctx.request.body.username;
+      const file = ctx.request.files.file;
+      const basename = path.basename(file.path)
+      ctx.body = {
+        status: 200,
+        data: {
+          username,
+          name: file.name,
+          url: `${ctx.origin}/uploads/${basename}` ,
+        }
+      }
+      break;
   }
 }
 
 function getUserById(id) {
   return mnData.find(item => item.id === +id);
+}
+
+function getUserByName(name) {
+  return mnData.find(item => item.name === name);
 }
 
 function getUserList(id = null) {
@@ -69,4 +90,5 @@ module.exports = {
   getUserList: (ctx, next) => deal(ctx, next, 'getUserList'),
   addUser: (ctx, next) => deal(ctx, next, 'addUser'),
   deleteUsersById: (ctx, next) => deal(ctx, next, 'deleteUsersById'),
+  upload: (ctx, next) => deal(ctx, next, 'upload'),
 }
