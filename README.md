@@ -83,7 +83,10 @@ mjFetch.fetch({
 ```
 
 #### 自定义fetch 封装
-MjFetchApi
+
+```js
+import { MjFetchApi } from 'mj-fetch'; // 版本 >=1.1.2
+```
 
 具体示例参考 [CustomDemo](https://github.com/weily22/NodeTest_Mjfetch/blob/main/src/view-ui/src/demo/CustomDemo/CustomDemo.jsx)
 
