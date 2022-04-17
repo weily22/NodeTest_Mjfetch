@@ -72,12 +72,18 @@ mjFetch.fetch({
   header: {}, // header头设置
   data: { name: 'mi' },  // 请求参数 get请求的data会自动转换为querystring形式
   timeout: 6000, // 超时请求设置，单位毫秒
+  before: () => {}, // 请求前回调 >=1.1.2
+  after: () => {},  // 请求后回调 >=1.1.2
 }).then((res) => {
   if (res.status === 200) {
     alert(res.message)
   }
 })
+
 ```
 
+#### 自定义fetch 封装
+MjFetchApi
 
+具体示例参考 [CustomDemo](https://github.com/weily22/NodeTest_Mjfetch/blob/main/src/view-ui/src/demo/CustomDemo/CustomDemo.jsx)
 

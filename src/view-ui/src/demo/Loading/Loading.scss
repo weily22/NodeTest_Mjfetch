@@ -1,0 +1,42 @@
+.loading {
+  width: 50px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+}
+.loading span {
+  display: inline-block;
+  width: 5px;
+  height: 100%;
+  border-radius: 2.5px;
+  background: #1890ff;
+  animation: load 1s ease infinite;
+
+  &:nth-child(2) {
+    -webkit-animation-delay:0.2s;
+  }
+  &:nth-child(3) {
+    -webkit-animation-delay:0.4s;
+  }
+  &:nth-child(4) {
+    -webkit-animation-delay:0.6s;
+  }
+  &:nth-child(5) {
+    -webkit-animation-delay:0.8s;
+  }
+}
+@keyframes load{
+  0%,100%{
+    height: 20px;
+    background: #1890ff;
+  }
+  50%{
+    height: 50px;
+    margin: -15px 0;
+    background: lightblue;
+  }
+}

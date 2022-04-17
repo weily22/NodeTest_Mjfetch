@@ -57,6 +57,21 @@ function deal(ctx, next, name) {
         }
       }
       break;
+    case 'test':
+      console.log('ctx.request', ctx.request)
+      const authorization =  ctx.request.header.authorization;
+      if (authorization && authorization === 'xm-token') {
+        ctx.body = {
+          code: 0,
+          message: "正常token哦"
+        }
+      } else {
+        ctx.body = {
+          code: 1,
+          message: "token失效"
+        }
+      }
+
   }
 }
 
@@ -91,4 +106,5 @@ module.exports = {
   addUser: (ctx, next) => deal(ctx, next, 'addUser'),
   deleteUsersById: (ctx, next) => deal(ctx, next, 'deleteUsersById'),
   upload: (ctx, next) => deal(ctx, next, 'upload'),
+  test: (ctx, next) => deal(ctx, next, 'test'),
 }
