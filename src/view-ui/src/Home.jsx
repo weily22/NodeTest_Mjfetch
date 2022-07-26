@@ -4,9 +4,10 @@ import PostDemo from './demo/PostDemo/PostDemo';
 import UploadDemo from './demo/UploadDemo/UploadDemo';
 import FetchDemo from "./demo/FetchDemo/FetchDemo";
 import CustomDemo from "./demo/CustomDemo/CustomDemo";
+import ExportDemo from "./demo/ExportDemo/ExportDemo";
 
 import './Home.scss';
-const SL = ['get', 'post', 'upload', 'fetch', 'custom'];
+const SL = ['get', 'post', 'upload', 'fetch', 'custom', 'export'];
 const Home = () => {
   return (
     <div className="home">
@@ -21,6 +22,7 @@ const Home = () => {
           <Route path="/upload" element={<UploadDemo/>}/>
           <Route path="/fetch" element={<FetchDemo/>}/>
           <Route path="/custom" element={<CustomDemo/>}/>
+          <Route path="/export" element={<ExportDemo/>}/>
         </Routes>
       </main>
     </div>

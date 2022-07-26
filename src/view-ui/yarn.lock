@@ -5985,10 +5985,10 @@
   "resolved" "https://registry.npmjs.org/minimist/-/minimist-1.2.6.tgz"
   "version" "1.2.6"
 
-"mj-fetch@^1.1.2":
-  "integrity" "sha512-QLVrpUYD3Px1yRgL+ydpm0Y6Y+RQBrTHabbzNtLB/EwkJy7BundqfqKvD8ooyfhLZz0aB//0AcbyDOpM6i1ajg=="
-  "resolved" "https://registry.npmjs.org/mj-fetch/-/mj-fetch-1.1.2.tgz"
-  "version" "1.1.2"
+"mj-fetch@^1.2.0":
+  "integrity" "sha512-gOtKpM+jkXXozhb5SUM8FbX64ffR5fploSKff+Kh4+izNQU+610ZlEc1Nmgcv15rpbZ+xxGFWYg+HTEIMbdFJg=="
+  "resolved" "https://registry.npmjs.org/mj-fetch/-/mj-fetch-1.2.0.tgz"
+  "version" "1.2.0"
   dependencies:
     "isomorphic-fetch" "^3.0.0"
     "qs" "^6.10.3"

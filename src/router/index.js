@@ -8,6 +8,7 @@ router
   .get('/user/:id', controllers.getUserById)
   .post('/user', controllers.addUser)
   .post('/upload', controllers.upload)
+  .get('/export', controllers.export)
   .get('/test', controllers.test)
   .delete('/user/:id', controllers.deleteUsersById)
 

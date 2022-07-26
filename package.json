@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/weily22/NodeTest_Mjfetch#readme",
   "dependencies": {
+    "excel-export": "^0.5.1",
     "koa": "^2.13.4",
     "koa-body": "^4.2.0",
     "koa-router": "^10.1.1",
